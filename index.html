@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    
+
+    <script>
+        // console.log(window);
+        // console.log(localStorage);
+
+        // localStorage.setItem("task", "Task B");
+
+        // const task = localStorage.getItem("task");
+        // console.log(task);
+
+        // localStorage.removeItem("task");
+        // localStorage.clear();
+
+        // let testResult = JSON.stringify(data);
+        // console.log(typeof testResult); // Json string
+        // let convertTest = JSON.parse(testResult);
+        // console.log(convertTest);        
+
+        // const data = ['Task A', 'Task B', 'Task C'];
+
+        // localStorage.setItem("tasks", JSON.stringify(data)); //Json stirng
+
+        // const tasks = JSON.parse(localStorage.getItem("tasks"));
+        // console.log(tasks);
+        // console.log(tasks.split(','));
+
+
+        const userData = {
+            name: "John",
+            age: 20,
+            address: "24th street"
+        };
+
+        // localStorage.setItem("user", JSON.stringify(userData));
+
+        // const user = JSON.parse(localStorage.getItem("user"));
+
+        // console.log(user);
+
+        Storage.prototype.setObject = function(key, value) {
+            return this.setItem(key, JSON.stringify(value));
+        }
+
+        Storage.prototype.getObject = function(key) {
+            return JSON.parse(this.getItem(key));
+        }
+
+
+        localStorage.setObject("user", userData);
+        const user = localStorage.getObject("user");
+
+        // console.log(user);
+
+
+        console.log(typeof []);
+
+
+    </script>
+</body>
+</html>
